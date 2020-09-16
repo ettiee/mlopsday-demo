@@ -1,0 +1,20 @@
+name: mlops-demo-okteto
+image: python:3
+namespace: ettie-eyre
+imagePullPolicy: IfNotPresent
+annotations:
+  iam.amazonaws.com/role: arn:aws:iam::140259119682:role/kubeflow-notebooks-users
+resources:
+  requests:
+    memory: "1Gi"
+    cpu: "1"
+  limits:
+    memory: "2Gi"
+    cpu: "2"
+forward:
+  - 8080:8080
+remote: 2222
+externalVolumes:
+  - workspace-mlops-day-demo:/data
+command:
+  - bash
