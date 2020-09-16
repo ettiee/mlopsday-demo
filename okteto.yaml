@@ -15,6 +15,6 @@ forward:
   - 8080:8080
 remote: 2222
 externalVolumes:
-  - workspace-mlops-day-demo:/data
+  - workspace-mlops-day-demo:/okteto/data
 command:
   - bash
